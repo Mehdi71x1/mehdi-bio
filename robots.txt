@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Disallow: /assets/*.mp3
+Disallow: /assets/*.jpg
+Disallow: /assets/*.png
+
+Sitemap: https://gajarbotol.top/sitemap.xml

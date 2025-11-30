@@ -1,32 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <url>
-    <loc>https://gajarbotol.top/</loc>
-    <lastmod>2024-11-28</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.00</priority>
-  </url>
+   <!-- Home Page (সবচেয়ে গুরুত্বপূর্ণ) -->
+   <url>
+      <loc>https://gajarbotol.top/</loc>
+      <lastmod>2025-11-30</lastmod>
+      <changefreq>daily</changefreq>
+      <priority>1.0</priority>
+   </url>
 
-  <url>
-    <loc>https://gajarbotol.top/TelegramActivity</loc>
-    <lastmod>2024-11-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-  </url>
+   <!-- Telegram Activity / Bio Page -->
+   <url>
+      <loc>https://gajarbotol.top/TelegramActivity.html</loc>
+      <lastmod>2025-11-30</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+   </url>
 
-  <url>
-    <loc>https://gajarbotol.top/banglacall</loc>
-    <lastmod>2024-11-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-  </url>
+   <!-- About Me / Girlfriend Section -->
+   <url>
+      <loc>https://gajarbotol.top/assets/index.html</loc>
+      <lastmod>2025-11-30</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
 
-  <url>
-    <loc>https://gajarbotol.top/assets/</loc>
-    <lastmod>2024-11-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.50</priority>
-  </url>
+   <!-- Bangla Call Registration -->
+   <url>
+      <loc>https://gajarbotol.top/banglacall.html</loc>
+      <lastmod>2025-11-30</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+   </url>
 
 </urlset>
